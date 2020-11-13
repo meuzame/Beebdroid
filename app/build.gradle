@@ -17,10 +17,12 @@ android {
     }
     // add a task that calls regular ndk-build(.cmd) script from app directory
     task ndkBuild(type: Exec) {
+        def ndkRoot = System.getenv('ANDROID_SDK_ROOT')+"/ndk-bundle/"
         if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+
             commandLine 'ndk-build.cmd', '-C', file('src/main').absolutePath
         } else {
-            commandLine '/Users/reuben/android/sdk/ndk-bundle/ndk-build', '-C', file('src/main').absolutePath
+            commandLine  ndkRoot + 'ndk-build', '-C', file('src/main').absolutePath
         }
     }
     // add this task as a dependency of Java compilation
