@@ -21,6 +21,7 @@ import android.support.v7.util.SortedList;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
+
 /**
  * A simple adapter which also inserts a header item ".." to handle going up to the parent folder.
  * @param <T> the type which is used, for example a normal java File object.
