@@ -33,33 +33,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
-    flavorDimensions 'version'
-
-    productFlavors {
-        ouya {
-            dimension 'version'
-            minSdkVersion 29
-            /*
-            dependencies {
-                compile 'ouya:ouya-sdk:+' // You can replace "+" with a specific version number
-            }*/
-        }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.legacy:legacy-support-v13:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-}
-
-repositories {
-    /*
-    maven {
-        url "http://maven.ouya.tv/"
-    }*/
 }
 
